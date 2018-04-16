@@ -1,5 +1,6 @@
-FROM  blitznote/debootstrap-amd64:16.04
-RUN apt-get upgrade
+FROM  blitznote/debootstrap-amd64:18.04
+RUN apt-get clean
+RUN apt-get -qq update
 RUN apt-get -y install apache2
 EXPOSE 83
 CMD ["/usr/sbin/apache2"] -D FOREGROUND
